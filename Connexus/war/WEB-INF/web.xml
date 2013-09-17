@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<welcome-file-list>
+		<welcome-file>CreateStream.html</welcome-file>
+	</welcome-file-list>
+
+	
+	<servlet>
+		<servlet-name>css</servlet-name>
+		<servlet-class>com.adnan.CreateStreamServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>css</servlet-name>
+		<url-pattern>/createStreamServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Adnan</servlet-name>
+		<servlet-class>com.adnan.AdnanServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Adnan</servlet-name>
+		<url-pattern>/adnan</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>imageuploadtest</servlet-name>
+		<servlet-class>com.adnan.ImageUploadTestServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>imageuploadtest</servlet-name>
+		<url-pattern>/imageuploadtest</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>blobuploadtest</servlet-name>
+		<servlet-class>com.adnan.BlobUploadTest</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>blobuploadtest</servlet-name>
+		<url-pattern>/blobuploadtest</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>com.adnan.Upload</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Serve</servlet-name>
+		<servlet-class>com.adnan.Serve</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Serve</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>ObjectifyFilter</filter-name>
+		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>
