@@ -14,30 +14,27 @@ public class ConnexusImage implements Comparable<ConnexusImage> {
 	@Id
 	public Long id;
 	public Long streamId;
-	public String comments;
+	public String streamName;
 	public String bkUrl;
 	public Date createDate;
 
 	@SuppressWarnings("unused")
-	private ConnexusImage() {
+	public ConnexusImage() {
+		this.createDate = new Date();
 	}
 
-	public ConnexusImage(Long streamId, String user, String content, String bkUrl) {
+	public ConnexusImage(Long streamId, String streamName, String bkUrl) {
 		this.streamId = streamId;
+		this.streamName = streamName;
 		this.bkUrl = bkUrl;
-		this.comments = content;
-		createDate = new Date();
+		this.createDate = new Date();
 	}
 	
 	@Override
 	public String toString() {
 		// Joiner is from google Guava (Java utility library), makes the toString method a little cleaner
 		Joiner joiner = Joiner.on(":");
-		System.out.println(id);
-		System.out.println(streamId);
-		System.out.println(bkUrl);
-		System.out.println(createDate.toString());
-		return joiner.join(id.toString(), streamId, comments, bkUrl==null ? "null" : bkUrl, createDate.toString());
+		return joiner.join(id.toString(), streamId, streamName, bkUrl==null ? "null" : bkUrl, createDate.toString());
 	}
 
 	// Need this for sorting images by date
